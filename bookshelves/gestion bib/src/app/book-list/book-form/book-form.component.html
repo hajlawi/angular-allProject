@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-ofset-2">
+    <h2> nouveau book</h2>
+    <form [formGroup]="bookForm" (ngSubmit)="onsaveBook()">
+      <div class="fom-group">
+        <label for="title" > Titre </label>
+        <input type="text" id="title" class="form-control" formControlName="title">
+      </div> <div class="fom-group">
+      <label for="author" > Auteur </label>
+      <input type="author" id="author" class="form-control" formControlName="author" autocomplete="off">
+    </div>
+      <div class="form-group">
+        <h4>Ajouter un photo</h4>
+        <input type="file" (change)="detectFile($event)" class="form-control" accept="image/*">
+        <p class="text-success" *ngIf="fileUploaded"> Fichier charger</p>
+      </div>
+      <button class=" btn btn-primary" [disabled]="bookForm.invalid||fileIsUploading">valider</button>
+    </form>
+  </div>
+</div>
+

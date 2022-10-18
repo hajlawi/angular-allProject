@@ -1,0 +1,17 @@
+
+  <div class="col-md-3 col-xs-12">
+    <div class="list-group"  *ngIf="categories">
+
+      <button class="list-group-item"
+              *ngFor="let c of categories._embedded.categories ;let i=index"  routerLink="products/{{c.id}}">
+        <h3 class="list-group-item-heading">{{c.name}}
+          <button class="btn btn-default pull-right"(click)="ondeleteCategory(c)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+      </button>
+    </div>
+    <button class="btn btn-primary"(click)="onNewCategory()">nouveau Task
+    </button>
+  </div>
+

@@ -1,0 +1,53 @@
+<div class="row" *ngIf="!test">
+<div class="col-sm-8 col-sm-offset-2" >
+  <div class="form-group">
+    <label for="name">nom</label>
+    <input type="text" id="name" class="form-control"  [(ngModel)]="contact.nom">
+  </div>
+  <div class="form-group">
+    <label for="prenom">prénom</label>
+    <input type="text" id="prenom" class="form-control"  [(ngModel)]="contact.prenom">
+  </div>
+  <div class="form-group">
+    <label for="datenaiss">date naissance</label>
+    <input type="date" id="datenaiss" class="form-control"  [(ngModel)]="contact.datenaisssance">
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input type="text" id="email" class="form-control"  [(ngModel)]="contact.email">
+  </div>
+  <div class="form-group">
+    <label for="tel">télephone</label>
+    <input type="text" id="tel" class="form-control" [(ngModel)]="contact.tel">
+  </div><div class="form-group">
+    <label for="photo">photo</label>
+    <input type="text" id="photo" class="form-control"  [(ngModel)]="contact.photo">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="saveContact()">Enregistrer</button>
+</div>
+</div>
+  <div class="row" *ngIf="test">
+  <div class="col-sm-8 col-sm-offset-2" >
+  <div class="form-group">
+    <label for="name">nom</label>
+    <label >{{contact.nom}}</label>
+  </div>
+  <div class="form-group">
+    <label for="prenom">prénom</label>
+    <label >{{contact.prenom}}</label>
+  </div>
+  <div class="form-group">
+    <label for="datenaiss">date naissance</label>
+    <label >{{contact.datenaisssance}}</label> </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <label >{{contact.email}}</label> </div>
+  <div class="form-group">
+    <label for="tel">télephone</label>
+    <label >{{contact.tel}}</label></div><div class="form-group">
+    <label for="photo">photo</label>
+    <label >{{contact.photo}}</label>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="test=false">nouveau</button>
+</div>
+</div>

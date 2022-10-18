@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="col-md-9 " >
+    <form [formGroup]="productForm" (ngSubmit)="onSaveProduct(currentProduct)">
+      <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" id="name"  class="form-control" formControlName="name" >
+      </div>
+      <div class="form-group">
+        <label for="des">Description</label>
+        <input type="text" id="des"  class="form-control" formControlName="description" >
+      </div>
+      <div>
+      <label for="price">Price</label>
+        <input type="text" id="price"  class="form-control" formControlName="currentPrice" >
+      </div>
+      <div>
+      <label for="promotion">Promotion</label>
+        <select id="promotion" class="form-control" formControlName="promotion" >
+          <option value="true">yes</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+      <div>
+      <label for="selected">Selected</label>
+        <select id="selected" class="form-control" formControlName="selected" >
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div>
+  <label for="avalable">avalable</label>
+        <select id="avalable" class="form-control" formControlName="avalable" >
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="qte">Quantity</label>
+        <input type="text" id="qte" class="form-control" formControlName="qte" >
+      </div>
+      <div class="form-group" >
+        <label >PhotoName</label>
+        <input type="file" (change)="onSelectedFile($event)" class="form-control" accept="image/*">
+        <p class="text-success" *ngIf="fileUploaded"> Fichier charger</p>
+        </div>
+      <button class=" btn btn-primary" type="submit" >valider</button>
+    </form>
+  </div>
+</div>

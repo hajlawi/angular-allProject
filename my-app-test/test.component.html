@@ -1,0 +1,8 @@
+<div *ngIf="inputData==[] else data">
+  no data
+</div>
+<ng-template #data>
+  <div *ngFor="let input of inputData">
+    {{input}}
+  </div>
+</ng-template>

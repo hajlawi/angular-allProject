@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="col-md-9 " >
+    <ul class="nav navbar-nav pull-right">
+      <li>
+        <a ></a>
+      </li>
+      <li>
+        <a (click)="onSignup()">
+          <span class="glyphicon glyphicon">singUp</span>
+        </a>
+      </li>
+    </ul>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<div class="form-group">
+  <label for="username">username</label>
+  <input type="text" id="username" class="form-control" formControlName="username">
+  <label for="password"> password </label>
+  <input type="password" id="password" class="form-control"formControlName="password">
+</div>
+  <button class="btn-primary" type="submit">valider</button>
+  <p class="text-danger">{{errorMessage}}</p>
+</form>
+
+  </div>
+</div>
+  </div>
+</div>

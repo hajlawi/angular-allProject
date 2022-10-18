@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-ofset-2">
+      <h2> nouveau book</h2>
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmitForm()">
+        <div class="fom-group">
+          <label for="title" > Titre </label>
+          <input type="text" id="title" class="form-control" formControlName="title" >
+        
+         <small *ngIf="f['title'].errors && f['title'].touched" class="text-danger">
+         {{getError('title',f['title'].errors)}}
+         </small>
+         <!--<small *ngIf="f['title'].errors?.['minlength']" class="text-danger">
+          title must be at least 6 characters
+         </small>!-->
+        </div> <div class="fom-group">
+        <label for="author" > Auteur </label>
+        <input type="author" id="author" class="form-control" formControlName="author" autocomplete="off">
+      </div>
+     
+    <div class="fom-group">
+        <label for="valable" > valable </label>
+        <input type="valable" id="valable" class="form-control" formControlName="available" autocomplete="off">
+      </div>
+      <div class="fom-group">
+        <label for="selected" > selected </label>
+        <input type="selected" id="selected" class="form-control" formControlName="selected" autocomplete="off">
+      </div>
+       
+        <button class=" btn btn-primary" [disabled]="bookForm.invalid">valider</button>
+      </form>
+    </div>
+  </div>
+  <div class="card" *ngIf="bookPreview$|async as book">
+    <div class="card-body" >
+      <h2 class="card-title">{{book.title}}</h2>
+      <a ></a>
+        </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{book.author}}</li>
+      <li class="list-group-item">{{book.available}}</li>
+      <li class="list-group-item">{{book.selected}}</li>
+    </ul>
+    
+  </div>

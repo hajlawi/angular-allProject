@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mon blog</h2>
+      <ul class="list-group">
+        <app-appareil *ngFor="let appareil of apareils; let i = index"
+                      [appareilName]="appareil.name"
+                      [appareilStatus]="appareil.status"
+                      [index]="i"
+                      [id]="appareil.id"></app-appareil>
+      </ul>
+      <!--  <ul class="list-group">
+         <app-postblog  *ngFor="let i of post"
+                        [title]="i.title"
+                        [content]="i.content"
+                        [lovit]="i.lovit"
+                        [date]="i.date"></app-postblog>
+       </ul>-->
+      <button class="btn btn-success"
+              (click)="onAllumer()">Tout allumer
+      </button>
+      <button class="btn btn-danger"
+              (click)="onEteindre()">Tout éteindre
+      </button>
+      <button class="btn btn-primary"
+              (click)="onSave()">Enregistrer les appareils</button>
+      <button class="btn btn-primary"
+              (click)="onFetch()">Récupérer les appareils</button>
+    </div>
+  </div>
+</div>

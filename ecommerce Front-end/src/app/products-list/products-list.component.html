@@ -1,0 +1,49 @@
+
+  <div class="col-md-9" >
+<button class="btn btn-default" (click)="onNewProduct()"> new Product</button>
+    <div *ngFor="let p of product;let i= index;" class="col-md-6">
+
+    <div class="panel panel-default heighted ">
+      <div class="panel-heading">{{p.name}}</div>
+
+      <div class="panel-body">
+<img class="img img-thumbnail img-rounded btn" (click)="onViewproduct(p)" [src]="'http://localhost:8080/photoProduct/'+p.id+'?ts='+getTS()"/>
+        <button (click)="onEditPhoto(p)">
+          <span class="glyphicon glyphicon-edit"></span>
+        </button>
+        <p *ngIf="editPhoto && currentProduct==p">
+          <input type="file" (change)="onSelectedFile($event)"></p>
+        <p class="text-success" *ngIf="fileUploaded"> Fichier charger</p>
+        <button class="btn btn-success" (click)="uploadPhoto()">Upload</button>
+
+      </div>
+      <div>
+        {{p.description}}
+      </div>
+      <div>
+        <label>Price : {{p.currentPrice|number:'0.00'}}</label>
+      </div>
+      <div>
+        <span *ngIf="p.promotion">
+                <img src="assets/images/promo.png" class="img-thumbnail img-circle" height="30">
+              </span>
+        <span *ngIf="p.selected">
+                <img src="assets/images/favorite.png" class="img-thumbnail img-circle" height="30">
+              </span>
+        <span *ngIf="p.available">
+                <img src="assets/images/available.png" class="img-thumbnail img-circle"  height="30">
+              </span>
+      </div>
+      <div>
+        <form form #f="ngForm" (ngSubmit)="onAddProductToCaddy(p)">
+          <label class="control-label">Quantité :</label>
+          <input type="number" name="quantity" [(ngModel)]="p.quantity" ngModel style="width:40px">
+          <button>
+            <img src="assets/images/caddy.png">
+          </button>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+
